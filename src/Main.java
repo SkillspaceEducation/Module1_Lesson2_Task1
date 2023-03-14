@@ -9,13 +9,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int digit = scanner.nextInt();
         scanner.close();
-        boolean result = isLastDigit(digit);
-        if (result) System.out.printf("Последняя цифра числа %d равна 7", digit);
-        else System.out.printf("Последняя цифра числа %d не равна 7", digit);
+        System.out.printf("Последняя цифра числа %d " + isLastDigit(digit),digit);
     }
 
-    static boolean isLastDigit(int i) {
+    static String isLastDigit(int i) {
         final int DIGIT = 7;
-        return (i % 10) == DIGIT;
+        if ((i % 10) == DIGIT){
+            return ("равна 7");
+        }
+        else {
+            return ("не равна 7");
+        }
     }
 }
